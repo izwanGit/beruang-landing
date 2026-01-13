@@ -447,8 +447,10 @@ body {
   }
 
   .gallery-item {
-    flex: 0 0 100%;
-    /* Show exactly 1 item */
+    flex: 0 0 calc(100% - 80px);
+    /* Smaller size to avoid filling the screen */
+    max-width: 300px;
+    /* Cap width for very small screens or landscape */
     height: auto;
     min-width: unset;
     border-width: 8px;
