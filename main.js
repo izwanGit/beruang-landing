@@ -29,11 +29,56 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
-    <!-- AI Intelligence Section (MOVED UP) -->
+    <!-- UI Gallery - Carousel -->
+    <section class="gallery-section">
+      <h2 class="section-title">App Interface</h2>
+      <p class="section-desc">Designed for clarity, powered by intelligence.</p>
+      <div class="gallery-carousel-wrapper">
+        <button class="nav-btn nav-prev" id="prevBtn">&#10094;</button>
+        
+        <div class="gallery-track-container">
+          <div class="gallery-track" id="galleryTrack">
+            ${[1, 2, 3, 4, 5, 6, 7].map((i, index) => `
+              <div class="gallery-item" onclick="openLightbox(${index})">
+                <img src="/app_ui/ui_${i}.png" class="gallery-img" alt="Screen ${i}" />
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        
+        <button class="nav-btn nav-next" id="nextBtn">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-container">
+      <h2 class="section-title">Why Beruang?</h2>
+      <p class="section-desc">Professional-grade financial strategies made accessible.</p>
+      
+      <div class="features-grid">
+        <div class="glass-card border-glow">
+          <span class="feature-icon">🧠</span>
+          <h3 class="card-title">AI Financial Expert</h3>
+          <p class="card-text">Connect with a real-time advisor that understands your goals. Get actionable advice tailored to your currency and cost of living.</p>
+        </div>
+        <div class="glass-card">
+          <span class="feature-icon">📊</span>
+          <h3 class="card-title">Automated 50/30/20</h3>
+          <p class="card-text">Stop guessing where your money goes. Our intelligence engine automatically allocates every RM into scientific budget categories.</p>
+        </div>
+        <div class="glass-card">
+          <span class="feature-icon">🎮</span>
+          <h3 class="card-title">Rewarding Progress</h3>
+          <p class="card-text">Stay motivated with a 13-level evolution system. Watch your bear evolve as the AI helps you reach new financial milestones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Intelligence Section (MOVED TO BOTTOM) -->
     <section class="ai-section main-character">
       <div class="ai-content">
         <div class="ai-text">
-          <h2 class="section-title" style="text-align: left">The Brain Behind Your Balance</h2>
+          <h2 class="section-title" style="text-align: left">Intelligent AI Chat</h2>
           <p class="card-text" style="font-size: 1.15rem; margin-bottom: 2rem; color: #fff; font-weight: 500;">
             Beruang's AI isn't just a chatbot—it's your personal financial data scientist. 
           </p>
@@ -57,51 +102,6 @@ document.querySelector('#app').innerHTML = `
              <h5 style="color: #333; margin: 0 0 1rem 0; font-weight: 700;">Spending Optimization</h5>
             <img src="/ai_distribution.png" class="chart-img" alt="Needs vs Wants Distribution" />
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- UI Gallery - Carousel -->
-    <section class="gallery-section">
-      <h2 class="section-title">Intelligent Interface</h2>
-      <p class="section-desc">Designed for clarity, powered by intelligence.</p>
-      <div class="gallery-carousel-wrapper">
-        <button class="nav-btn nav-prev" id="prevBtn">&#10094;</button>
-        
-        <div class="gallery-track-container">
-          <div class="gallery-track" id="galleryTrack">
-            ${[1, 2, 3, 4, 5, 6, 7].map((i, index) => `
-              <div class="gallery-item" onclick="openLightbox(${index})">
-                <img src="/app_ui/ui_${i}.png" class="gallery-img" alt="Screen ${i}" />
-              </div>
-            `).join('')}
-          </div>
-        </div>
-        
-        <button class="nav-btn nav-next" id="nextBtn">&#10095;</button>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-container">
-      <h2 class="section-title">Beyond Simple Tracking</h2>
-      <p class="section-desc">Professional-grade financial strategies made accessible.</p>
-      
-      <div class="features-grid">
-        <div class="glass-card border-glow">
-          <span class="feature-icon">🧠</span>
-          <h3 class="card-title">AI Financial Expert</h3>
-          <p class="card-text">Connect with a real-time advisor that understands your goals. Get actionable advice tailored to your currency and cost of living.</p>
-        </div>
-        <div class="glass-card">
-          <span class="feature-icon">📊</span>
-          <h3 class="card-title">Automated 50/30/20</h3>
-          <p class="card-text">Stop guessing where your money goes. Our intelligence engine automatically allocates every RM into scientific budget categories.</p>
-        </div>
-        <div class="glass-card">
-          <span class="feature-icon">🎮</span>
-          <h3 class="card-title">Rewarding Progress</h3>
-          <p class="card-text">Stay motivated with a 13-level evolution system. Watch your bear evolve as the AI helps you reach new financial milestones.</p>
         </div>
       </div>
     </section>
