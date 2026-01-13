@@ -448,13 +448,15 @@ body {
   }
 
   .gallery-item {
-    flex: 0 0 calc(100% - 40px);
-    /* Show glimpses of prev/next items */
+    flex: 0 0 250px;
+    /* Force a smaller size to "zoom out" */
+    height: 450px;
+    /* Fixed height to match smaller width */
     min-width: unset;
     border-width: 6px;
     /* Sleeker bezel */
     border-radius: 24px;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .nav-btn {
