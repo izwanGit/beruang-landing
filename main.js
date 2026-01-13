@@ -1,7 +1,7 @@
 import './style.css'
 
 const totalOriginalItems = 7;
-const visibleItems = window.innerWidth > 768 ? 3 : 1;
+const visibleItems = 3; // Always show 3 for the "3-frame" layout
 
 document.querySelector('#app').innerHTML = `
   <div class="container">
