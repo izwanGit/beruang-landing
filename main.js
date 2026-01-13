@@ -193,13 +193,14 @@ track.addEventListener('transitionend', () => {
     isTransitioning = false;
 
     // Wrap around detection
+    // If we've reached the start clone (itemsCount + buffer), jump to the first original item
     if (currentIndex >= itemsCount + buffer) {
         currentIndex = buffer;
         updateCarousel(true);
-    } else if (currentIndex < buffer) {
+    }
+    // If we've reached the end clone (buffer - 1), jump back to the last original item
+    else if (currentIndex < buffer) {
         currentIndex = itemsCount + buffer - 1;
-        // Special case for multi-visible: adjust slightly if needed
-        // But for 7 items and 3 visible, buffer=3 is enough to hide jumps
         updateCarousel(true);
     }
 });

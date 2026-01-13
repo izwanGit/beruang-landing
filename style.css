@@ -392,25 +392,79 @@ body {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 1rem 1rem;
+  }
+
+  .hero {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .gallery-section {
+    margin-bottom: 4rem;
+    padding-top: 2rem;
+  }
+
+  .gallery-carousel-wrapper {
+    padding: 0 1.5rem;
+    /* Less side padding for more screen space */
+  }
+
+  .gallery-track {
+    gap: 1rem;
+    /* Smaller gap on mobile */
+  }
+
+  .gallery-item {
+    flex: 0 0 100%;
+    min-width: unset;
+    border-width: 8px;
+    /* Thinner bezel on mobile */
+    border-radius: 28px;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .nav-prev {
+    left: -10px;
+  }
+
+  .nav-next {
+    right: -10px;
+  }
+
   .ai-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .gallery-item {
-    flex: 0 0 100%;
+  .ai-section.main-character {
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .chart-card {
+    margin-left: 0 !important;
+    margin-top: 1rem !important;
   }
 
   .lightbox-nav {
     margin: 0 0.5rem;
     padding: 1rem;
+    font-size: 1.5rem;
   }
 
-  .ai-section.main-character {
-    padding: 2rem 1.5rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
+  .section-title {
+    font-size: 1.8rem;
   }
 }
