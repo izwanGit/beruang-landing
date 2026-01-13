@@ -433,9 +433,10 @@ body {
   }
 
   .gallery-carousel-wrapper {
-    padding: 0;
-    /* Full width for track */
+    padding: 0 3rem;
+    /* Add side padding to make the frame "smaller" and center it */
     position: relative;
+    width: 100%;
   }
 
   .gallery-track-container {
@@ -447,7 +448,8 @@ body {
   }
 
   .gallery-item {
-    flex: 0 0 calc(100% - 80px);
+    flex: 0 0 100%;
+    /* Show exactly 1 item in the viewport */
     /* Smaller size to avoid filling the screen */
     max-width: 300px;
     /* Cap width for very small screens or landscape */
