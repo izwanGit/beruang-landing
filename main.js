@@ -3,17 +3,18 @@ import './style.css'
 document.querySelector('#app').innerHTML = `
   <div class="container">
     
-    <!-- Hero Section - AI SPOTLIGHT -->
+    <!-- Hero Section -->
     <section class="hero">
       <div class="hero-visual">
-        <img src="/screenshot.png" class="app-screenshot-hero" alt="Beruang AI Interface" />
+        <img src="/screenshot.png" class="app-screenshot-hero" alt="Beruang App" />
       </div>
       
       <div class="hero-content">
-        <h1>Your AI-Powered <br> Financial Mastermind</h1>
+        <h1>Beruang: Your AI Financial Advisor</h1>
         <p class="subtitle">
-          Beruang uses advanced artificial intelligence to analyze your unique financial habits, 
-          providing real-time insights and predictive analysis that manual trackers can't match.
+          Master your budget through the power of artificial intelligence. 
+          Get real-time expert insights, predictive spending analysis, 
+          and personalized wealth-building strategies.
         </p>
         
         <div class="btn-group">
@@ -28,67 +29,42 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
-    <!-- AI Intelligence Section - THE MAIN CHARACTER -->
-    <section class="ai-section main-character-ai">
+    <!-- AI Intelligence Section (MOVED UP) -->
+    <section class="ai-section main-character">
       <div class="ai-content">
         <div class="ai-text">
-          <h2 class="section-title ai-highlight-title" style="text-align: left">Financial Intelligence</h2>
-          <p class="card-text ai-description-hero">
-            Chat in real-time with Beruang's sophisticated AI assistant. It doesn't just track data—it understands your life, predicts future spending, and provides actionable wealth-building advice.
+          <h2 class="section-title" style="text-align: left">The Brain Behind Your Balance</h2>
+          <p class="card-text" style="font-size: 1.15rem; margin-bottom: 2rem; color: #fff; font-weight: 500;">
+            Beruang's AI isn't just a chatbot—it's your personal financial data scientist. 
           </p>
-          <div class="glass-card ai-focus-card">
-            <h4 style="margin: 0 0 0.5rem 0; font-weight: 800; color: #fff;">Context-Aware Analysis</h4>
+          <div class="glass-card ai-feature-card">
+            <h4 style="margin: 0 0 0.5rem 0; font-weight: 700; color: var(--primary);">Predictive Context Analysis</h4>
             <p style="font-size: 0.95rem; margin: 0; opacity: 0.9;">
-              Beruang analyzes your transaction history to categorize spending automatically and forecast your month-end balance with frightening accuracy.
+              By analyzing your unique spending history, our AI identifies patterns before you do, predicting upcoming bills and suggesting adjustments in real-time.
             </p>
           </div>
+          <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+            * All AI processing is done with enterprise-grade privacy. We never sell your data.
+          </p>
         </div>
         
         <div class="ai-visuals">
-          <div class="chart-card ai-visual-card">
-            <h5 style="color: #333; margin: 0 0 1rem 0; font-weight: 800;">AI Optimization Heatmap</h5>
+          <div class="chart-card glow-card">
+            <h5 style="color: #333; margin: 0 0 1rem 0; font-weight: 700;">AI Prediction Engine</h5>
             <img src="/ai_accuracy.png" class="chart-img" alt="AI Accuracy Heatmap" />
           </div>
-          <div class="chart-card ai-visual-card">
-             <h5 style="color: #333; margin: 0 0 1rem 0; font-weight: 800;">Predictive Distribution</h5>
+          <div class="chart-card glow-card" style="margin-top: -1rem; margin-left: 2rem;">
+             <h5 style="color: #333; margin: 0 0 1rem 0; font-weight: 700;">Spending Optimization</h5>
             <img src="/ai_distribution.png" class="chart-img" alt="Needs vs Wants Distribution" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section - REORDERED -->
-    <section class="features-container">
-      <h2 class="section-title">Superior Capability</h2>
-      <p class="section-desc">The perfect blend of high-performance AI and engaging user experience.</p>
-      
-      <div class="features-grid">
-        <!-- AI FIRST -->
-        <div class="glass-card ai-featured-card">
-          <span class="feature-icon">🧠</span>
-          <h3 class="card-title">Intelligent Insights</h3>
-          <p class="card-text">Access deep financial analytics. Beruang's LLM-driven engine identifies patterns in your spending that help you eliminate waste and save more efficiently.</p>
-        </div>
-        
-        <!-- STRATEGY SECOND -->
-        <div class="glass-card">
-          <span class="feature-icon">📊</span>
-          <h3 class="card-title">Professional Strategy</h3>
-          <p class="card-text">Implementation of the 50-30-20 rule helps you allocate RM income perfectly into Needs, Wants, and Savings without doing any manual math.</p>
-        </div>
-
-        <!-- GAMIFICATION THIRD (SUPPORTING) -->
-        <div class="glass-card footer-feature">
-          <span class="feature-icon">🎮</span>
-          <h3 class="card-title">Progress Tracking</h3>
-          <p class="card-text">Stay motivated with a fun 13-level bear evolution system. Earn XP for positive financial habits and watch your mascot grow as your net worth increases.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- UI Gallery - Carousel -->
     <section class="gallery-section">
-      <h2 class="section-title">The Interface</h2>
+      <h2 class="section-title">Intelligent Interface</h2>
+      <p class="section-desc">Designed for clarity, powered by intelligence.</p>
       <div class="gallery-carousel-wrapper">
         <button class="nav-btn nav-prev" id="prevBtn">&#10094;</button>
         
@@ -106,6 +82,30 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
+    <!-- Features Section -->
+    <section class="features-container">
+      <h2 class="section-title">Beyond Simple Tracking</h2>
+      <p class="section-desc">Professional-grade financial strategies made accessible.</p>
+      
+      <div class="features-grid">
+        <div class="glass-card border-glow">
+          <span class="feature-icon">🧠</span>
+          <h3 class="card-title">AI Financial Expert</h3>
+          <p class="card-text">Connect with a real-time advisor that understands your goals. Get actionable advice tailored to your currency and cost of living.</p>
+        </div>
+        <div class="glass-card">
+          <span class="feature-icon">📊</span>
+          <h3 class="card-title">Automated 50/30/20</h3>
+          <p class="card-text">Stop guessing where your money goes. Our intelligence engine automatically allocates every RM into scientific budget categories.</p>
+        </div>
+        <div class="glass-card">
+          <span class="feature-icon">🎮</span>
+          <h3 class="card-title">Rewarding Progress</h3>
+          <p class="card-text">Stay motivated with a 13-level evolution system. Watch your bear evolve as the AI helps you reach new financial milestones.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Lightbox Modal -->
     <div id="lightbox" class="lightbox">
       <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
@@ -118,7 +118,6 @@ document.querySelector('#app').innerHTML = `
 
     <footer class="footer">
       <p>&copy; ${new Date().getFullYear()} Beruang. Built for better financial futures.</p>
-      <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.5;">Data Security: 256-bit TLS Encryption | Firebase Cloud Strategy</p>
     </footer>
 
   </div>

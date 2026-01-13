@@ -8,7 +8,7 @@
   --font-main: 'Outfit', sans-serif;
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
-  --ai-glow: rgba(200, 219, 190, 0.3);
+  --ai-glow: rgba(200, 219, 190, 0.4);
 }
 
 * {
@@ -61,127 +61,71 @@ body {
   display: block;
   width: 100%;
   height: auto;
-  /* Shadow added as hero is now "AI Highlight" */
-  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
-  border-radius: 40px;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
   margin: 0 0 1rem 0;
   color: var(--white);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(to right, #fff, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-content .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2.5rem;
-  max-width: 700px;
+  max-width: 650px;
   line-height: 1.6;
 }
 
-/* AI Section - "Main Character" Styles */
-.ai-section {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 40px;
-  padding: 4rem;
-  margin-bottom: 6rem;
-  width: 100%;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.main-character-ai::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 42px;
-  background: linear-gradient(135deg, transparent 40%, var(--ai-glow) 100%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.ai-highlight-title {
-  font-size: 2.8rem;
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-
-.ai-description-hero {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  opacity: 0.95;
-}
-
-.ai-focus-card {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 2.5rem;
-  margin-top: 2rem;
-}
-
-.ai-visual-card {
-  transition: transform 0.3s ease;
-}
-
-.ai-visual-card:hover {
-  transform: scale(1.05);
-}
-
-/* Features Gallery */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  margin-bottom: 6rem;
-}
-
-.ai-featured-card {
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid var(--primary);
-  transform: scale(1.05);
-  z-index: 5;
-}
-
-.glass-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  padding: 2.5rem;
-  border-radius: 24px;
-}
-
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 800;
-}
-
-.card-text {
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
   font-size: 1.05rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
 }
 
-/* Gallery & iPhone */
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  background: var(--white);
+  color: #557c50;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Gallery - Carousel & iPhone Frame */
 .gallery-section {
   width: 100%;
   margin-bottom: 6rem;
   position: relative;
   max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .gallery-carousel-wrapper {
@@ -211,6 +155,8 @@ body {
   position: relative;
   transition: transform 0.3s ease;
   cursor: pointer;
+
+  /* iPhone Bezel Styling */
   border: 12px solid #1a1a1a;
   border-radius: 36px;
   background: #000;
@@ -242,7 +188,7 @@ body {
   display: block;
 }
 
-/* Modal & Buttons */
+/* Nav Arrows */
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -255,6 +201,7 @@ body {
   font-size: 1.2rem;
   color: #333;
   cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -269,41 +216,46 @@ body {
   right: 0;
 }
 
-.btn-group {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+/* AI Section (Main Character Styling) */
+.ai-section.main-character {
+  background: radial-gradient(circle at top right, rgba(200, 219, 190, 0.2), transparent),
+    rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  margin-bottom: 6rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn {
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: transform 0.2s ease;
+.ai-section::after {
+  content: 'AI';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 15rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
 }
 
-.btn:hover {
-  transform: translateY(-4px) scale(1.02);
+.ai-feature-card {
+  margin-top: 1.5rem;
+  border: 1px solid var(--primary);
+  background: rgba(200, 219, 190, 0.05);
 }
 
-.btn-primary {
-  background: var(--white);
-  color: #557c50;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.glow-card {
+  box-shadow: 0 10px 30px var(--ai-glow);
+  border: 1px solid var(--primary);
 }
 
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.border-glow {
+  border: 1px solid var(--primary);
 }
 
+/* Lightbox */
 .lightbox {
   position: fixed;
   top: 0;
@@ -322,78 +274,127 @@ body {
   display: flex;
 }
 
+.lightbox-content-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-height: 90vh;
+}
+
 .lightbox-img {
-  max-height: 85vh;
+  max-height: 80vh;
   max-width: 90vw;
   border-radius: 20px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  border: 4px solid #1a1a1a;
 }
 
 .lightbox-close {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   color: #fff;
-  font-size: 3rem;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 
 .lightbox-nav {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: none;
-  padding: 2rem;
-  font-size: 2.5rem;
+  padding: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   border-radius: 50%;
   margin: 0 2rem;
-  transition: background 0.3s;
 }
 
-.lightbox-nav:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
+/* Features/AI Sections */
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   text-align: center;
-  color: #fff;
 }
 
 .section-desc {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 4rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1.2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 2.5rem 2rem;
+  border-radius: 24px;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.ai-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.chart-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .footer {
-  margin-top: 4rem;
-  padding-bottom: 2rem;
-  opacity: 0.7;
-  font-size: 0.95rem;
+  margin-top: 2rem;
+  opacity: 0.6;
+  font-size: 0.9rem;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
-  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
   .ai-content {
     grid-template-columns: 1fr;
-  }
-
-  .ai-section {
-    padding: 2rem;
-  }
-
-  .ai-highlight-title {
-    font-size: 2rem;
+    gap: 2rem;
   }
 
   .gallery-item {
@@ -403,6 +404,10 @@ body {
   .lightbox-nav {
     margin: 0 0.5rem;
     padding: 1rem;
+  }
+
+  .ai-section.main-character {
+    padding: 2rem 1.5rem;
   }
 
   .hero-content h1 {
