@@ -71,6 +71,7 @@ body {
   letter-spacing: -0.02em;
   background: linear-gradient(to right, #fff, var(--primary));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -466,5 +467,10 @@ body {
 
   .section-title {
     font-size: 1.8rem;
+  }
+
+  /* Prevent horizontal scroll on some mobile browsers */
+  .container {
+    overflow-x: hidden;
   }
 }
