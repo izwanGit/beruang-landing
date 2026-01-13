@@ -1,5 +1,8 @@
 import './style.css'
 
+const totalOriginalItems = 7;
+const visibleItems = window.innerWidth > 768 ? 3 : 1;
+
 document.querySelector('#app').innerHTML = `
   <div class="container">
     
@@ -38,11 +41,8 @@ document.querySelector('#app').innerHTML = `
         
         <div class="gallery-track-container">
           <div class="gallery-track" id="galleryTrack">
-            ${[1, 2, 3, 4, 5, 6, 7].map((i, index) => `
-              <div class="gallery-item" onclick="openLightbox(${index})">
-                <img src="/app_ui/ui_${i}.png" class="gallery-img" alt="Screen ${i}" />
-              </div>
-            `).join('')}
+            <!-- Infinite Clones + Originals -->
+            ${generateCarouselItems()}
           </div>
         </div>
         
@@ -123,47 +123,90 @@ document.querySelector('#app').innerHTML = `
   </div>
 `;
 
-// --- Carousel Logic (Circular/Looping) ---
-const track = document.getElementById('galleryTrack');
-const totalItems = 7;
-let currentIndex = 0;
+function generateCarouselItems() {
+    const items = [1, 2, 3, 4, 5, 6, 7];
+    // For infinite scroll, we clone items at both ends
+    // Buffer size should be at least visibleItems
+    const buffer = 3;
+    const pre = items.slice(-buffer);
+    const post = items.slice(0, buffer);
+    const combined = [...pre, ...items, ...post];
 
-function updateCarousel() {
+    return combined.map((i, index) => {
+        // Map indices for lightbox back to original 0-6
+        let originalIdx;
+        if (index < buffer) originalIdx = items.length - buffer + index;
+        else if (index < buffer + items.length) originalIdx = index - buffer;
+        else originalIdx = index - (buffer + items.length);
+
+        return `
+      <div class="gallery-item" onclick="openLightbox(${originalIdx})">
+        <img src="/app_ui/ui_${i}.png" class="gallery-img" alt="Screen ${i}" />
+      </div>
+    `;
+    }).join('');
+}
+
+// --- Infinite Carousel Logic ---
+const track = document.getElementById('galleryTrack');
+const itemsCount = 7;
+const buffer = 3;
+let currentIndex = buffer; // Start at first original item
+let isTransitioning = false;
+
+function updateCarousel(instant = false) {
+    if (instant) track.style.transition = 'none';
+    else track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+
     const item = track.querySelector('.gallery-item');
     if (!item) return;
     const itemWidth = item.getBoundingClientRect().width;
     const gap = 32;
     const moveAmount = (itemWidth + gap) * currentIndex;
     track.style.transform = `translateX(-${moveAmount}px)`;
+
+    if (instant) {
+        // Force reflow
+        track.offsetHeight;
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    }
 }
 
-document.getElementById('nextBtn').addEventListener('click', () => {
-    const visibleItems = window.innerWidth > 768 ? 3 : 1;
-    const maxIndex = totalItems - visibleItems;
+// Initial position
+updateCarousel(true);
 
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Loop back to start
-    }
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex++;
     updateCarousel();
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-    const visibleItems = window.innerWidth > 768 ? 3 : 1;
-    const maxIndex = totalItems - visibleItems;
-
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = maxIndex; // Loop to end
-    }
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex--;
     updateCarousel();
 });
 
+track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+
+    // Wrap around detection
+    if (currentIndex >= itemsCount + buffer) {
+        currentIndex = buffer;
+        updateCarousel(true);
+    } else if (currentIndex < buffer) {
+        currentIndex = itemsCount + buffer - 1;
+        // Special case for multi-visible: adjust slightly if needed
+        // But for 7 items and 3 visible, buffer=3 is enough to hide jumps
+        updateCarousel(true);
+    }
+});
+
 window.addEventListener('resize', () => {
-    currentIndex = 0;
-    updateCarousel();
+    currentIndex = buffer;
+    updateCarousel(true);
 });
 
 
@@ -188,13 +231,13 @@ function updateLightboxImage() {
 
 document.getElementById('lbNext').addEventListener('click', (e) => {
     e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex + 1) % totalItems;
+    currentLightboxIndex = (currentLightboxIndex + 1) % itemsCount;
     updateLightboxImage();
 });
 
 document.getElementById('lbPrev').addEventListener('click', (e) => {
     e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex - 1 + totalItems) % totalItems;
+    currentLightboxIndex = (currentLightboxIndex - 1 + itemsCount) % itemsCount;
     updateLightboxImage();
 });
 
