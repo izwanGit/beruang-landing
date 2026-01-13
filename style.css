@@ -443,18 +443,22 @@ body {
   }
 
   .gallery-track {
-    gap: 1.5rem;
-    /* Consistent gap */
+    gap: 32px;
   }
 
   .gallery-item {
-    flex: 0 0 calc(100% - 40px);
-    /* Show 1 item with glimpses */
+    flex: 0 0 100%;
+    /* Show exactly 1 item */
     height: auto;
     min-width: unset;
     border-width: 8px;
     border-radius: 36px;
-    margin: 0 auto;
+    margin: 0;
+  }
+
+  .gallery-track {
+    gap: 32px;
+    /* Match JS gap perfectly */
   }
 
   .nav-btn {
