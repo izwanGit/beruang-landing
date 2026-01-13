@@ -512,8 +512,36 @@ body {
   }
 
   .ai-section.main-character {
-    padding: 3rem 1.5rem;
+    padding: 3rem 1.25rem;
     margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ai-text {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .ai-text h2.section-title {
+    text-align: center !important;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ai-feature-card {
+    margin: 1.5rem auto 0;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .ai-visuals {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .ai-content {
