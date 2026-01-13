@@ -74,7 +74,7 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
-    <!-- AI Intelligence Section (MOVED TO BOTTOM) -->
+    <!-- AI Intelligence Section -->
     <section class="ai-section main-character">
       <div class="ai-content">
         <div class="ai-text">
@@ -123,7 +123,7 @@ document.querySelector('#app').innerHTML = `
   </div>
 `;
 
-// --- Carousel Logic ---
+// --- Carousel Logic (Circular/Looping) ---
 const track = document.getElementById('galleryTrack');
 const totalItems = 7;
 let currentIndex = 0;
@@ -139,17 +139,26 @@ function updateCarousel() {
 
 document.getElementById('nextBtn').addEventListener('click', () => {
     const visibleItems = window.innerWidth > 768 ? 3 : 1;
-    if (currentIndex < totalItems - visibleItems) {
+    const maxIndex = totalItems - visibleItems;
+
+    if (currentIndex < maxIndex) {
         currentIndex++;
-        updateCarousel();
+    } else {
+        currentIndex = 0; // Loop back to start
     }
+    updateCarousel();
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
+    const visibleItems = window.innerWidth > 768 ? 3 : 1;
+    const maxIndex = totalItems - visibleItems;
+
     if (currentIndex > 0) {
         currentIndex--;
-        updateCarousel();
+    } else {
+        currentIndex = maxIndex; // Loop to end
     }
+    updateCarousel();
 });
 
 window.addEventListener('resize', () => {
