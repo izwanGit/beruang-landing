@@ -448,15 +448,13 @@ body {
   }
 
   .gallery-item {
-    flex: 0 0 calc(33.333% - 10px);
-    /* Show exactly 3 items */
-    height: 200px;
-    /* Scale height down significantly to fit */
+    flex: 0 0 calc(100% - 40px);
+    /* Show 1 item with glimpses */
+    height: auto;
     min-width: unset;
-    border-width: 4px;
-    /* Even sleeker bezel for tiny frames */
-    border-radius: 12px;
-    margin: 0;
+    border-width: 8px;
+    border-radius: 36px;
+    margin: 0 auto;
   }
 
   .nav-btn {
@@ -481,34 +479,29 @@ body {
   }
 
   .features-grid {
-    grid-template-columns: repeat(3, 1fr);
-    /* Force 3 columns side-by-side */
-    gap: 0.5rem;
-    /* Narrow gap to fit */
+    grid-template-columns: 1fr;
+    /* Stacked layout */
+    gap: 1.5rem;
   }
 
   .glass-card {
-    padding: 1rem 0.5rem;
-    /* Shrunken padding */
-    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
   }
 
   .feature-icon {
-    font-size: 1.5rem;
-    /* Shrunken icon */
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .card-title {
-    font-size: 0.8rem;
-    /* Shrunken title */
-    margin-bottom: 0.2rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
   }
 
   .card-text {
-    font-size: 0.65rem;
-    /* Shrunken text */
-    line-height: 1.3;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .ai-section.main-character {
