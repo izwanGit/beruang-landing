@@ -475,8 +475,8 @@ body {
 
 .install-steps-simple {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
   margin-bottom: 2rem;
   text-align: left;
 }
@@ -489,6 +489,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.step-card-simple:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .step-header {
