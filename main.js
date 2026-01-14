@@ -26,10 +26,10 @@ document.querySelector('#app').innerHTML = `
             <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           </a>
           <div class="ios-btn-wrapper">
-            <a href="itms-services://?action=download-manifest&url=https://beruang-landing.vercel.app/downloads/manifest.plist" class="btn btn-secondary">
-               <span>Install for iOS</span>
+            <a href="/downloads/beruang.ipa" class="btn btn-secondary" download>
+               <span>Download for iOS</span>
             </a>
-            <a href="#" class="install-link" onclick="openInstallModal(event)">Having trouble?</a>
+            <a href="#" class="install-link" onclick="openInstallModal(event)">How to install?</a>
           </div>
         </div>
       </div>
