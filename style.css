@@ -412,267 +412,7 @@ body {
   padding-bottom: 2rem;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 1.5rem 1rem;
-    overflow-x: hidden;
-  }
 
-  .hero {
-    margin-top: 4rem;
-    /* More space from the top border */
-    margin-bottom: 4rem;
-    padding: 0 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .hero-visual {
-    max-width: 260px;
-    margin-bottom: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-content h1 {
-    font-size: 1.65rem;
-    line-height: 1.3;
-    margin-bottom: 0.8rem;
-    text-align: center;
-    width: 100%;
-  }
-
-  .hero-content .subtitle {
-    font-size: 0.85rem;
-    margin-bottom: 1.8rem;
-    line-height: 1.5;
-    max-width: 100%;
-    padding: 0 0.5rem;
-    text-align: center;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .btn {
-    width: 100% !important;
-    max-width: 280px;
-    height: 50px;
-    font-size: 0.95rem;
-  }
-
-  .install-help-wrapper {
-    margin-top: 1rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .install-link {
-    font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    margin: 0 auto;
-  }
-
-  /* Gallery Mobile Refinement */
-  .gallery-section {
-    margin-bottom: 5rem;
-    padding: 0;
-    width: 100%;
-  }
-
-  .gallery-carousel-wrapper {
-    padding: 0 3rem;
-    /* Add side padding to make the frame "smaller" and center it */
-    position: relative;
-    width: 100%;
-  }
-
-  .gallery-track-container {
-    padding: 1rem 0;
-  }
-
-  .gallery-track {
-    gap: 32px;
-  }
-
-  .gallery-item {
-    flex: 0 0 100%;
-    /* Show exactly 1 item in the viewport */
-    /* Smaller size to avoid filling the screen */
-    max-width: 300px;
-    /* Cap width for very small screens or landscape */
-    height: auto;
-    min-width: unset;
-    border-width: 8px;
-    border-radius: 36px;
-    margin: 0;
-  }
-
-  .gallery-track {
-    gap: 32px;
-    /* Match JS gap perfectly */
-  }
-
-  .nav-btn {
-    width: 46px;
-    height: 46px;
-    background: #FFFFFF !important;
-    color: #000000 !important;
-    opacity: 1 !important;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
-    z-index: 10000;
-    /* Ensure it stays above everything */
-    display: flex !important;
-    /* Force display */
-  }
-
-  .nav-prev {
-    left: 10px;
-  }
-
-  .nav-next {
-    right: 10px;
-  }
-
-  /* Section Spacing */
-  .features-container {
-    margin-bottom: 4rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    /* Stacked layout */
-    gap: 1.5rem;
-  }
-
-  .glass-card {
-    padding: 2rem 1.25rem;
-    border-radius: 20px;
-  }
-
-  .feature-icon {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    padding: 0 1rem;
-  }
-
-  .section-desc {
-    font-size: 0.9rem;
-    padding: 0 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .card-text {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  .ai-section.main-character {
-    padding: 2.5rem 1rem;
-    margin-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .ai-text {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  .ai-text h2.section-title {
-    text-align: center !important;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .ai-feature-card {
-    margin: 1.5rem auto 0;
-    text-align: left;
-    max-width: 100%;
-  }
-
-  .ai-visuals {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .ai-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .chart-card {
-    margin: 0 !important;
-    width: 100%;
-  }
-
-  /* Modal Mobile Tweaks */
-  .modal-content {
-    padding: 2.5rem 1.25rem;
-    border-radius: 20px;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
-  .modal-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .step-number {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
-  }
-
-  .step-card h3 {
-    font-size: 1rem;
-  }
-
-  .modal-close {
-    top: 10px;
-    right: 15px;
-    font-size: 1.5rem;
-  }
-
-  .install-steps {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-}
 
 /* Install Modal Styles */
 .modal-overlay {
@@ -797,4 +537,231 @@ body {
 .install-link:hover {
   color: var(--white);
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- MOBILE STYLES (OVERRIDE EVERYTHING ABOVE) --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-visual {
+    max-width: 260px;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .hero-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 1.65rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+
+  .hero-content .subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+    max-width: 100%;
+    padding: 0 0.5rem;
+    text-align: center;
+    display: block;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .btn {
+    width: 100% !important;
+    max-width: 280px;
+    height: 50px;
+    font-size: 0.95rem;
+    margin: 0 auto;
+    /* Force grouping in center */
+  }
+
+  .install-help-wrapper {
+    margin-top: 1.2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .install-link {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* Gallery Mobile Refinement */
+  .gallery-section {
+    margin-bottom: 5rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  .gallery-carousel-wrapper {
+    padding: 0 2rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .nav-btn {
+    width: 44px;
+    height: 44px;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    opacity: 1 !important;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    display: flex !important;
+  }
+
+  .nav-prev {
+    left: 5px;
+  }
+
+  .nav-next {
+    right: 5px;
+  }
+
+  /* Feature Sections */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .glass-card {
+    padding: 2rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* Lightbox Navigation for Mobile */
+  .lightbox-nav {
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    opacity: 1 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+
+  .lightbox-content-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .lightbox-img {
+    max-width: 80vw;
+  }
+
+  /* Modal (How to Install) Mobile */
+  .modal-content {
+    padding: 2.5rem 1.25rem;
+    border-radius: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+    width: 95%;
+  }
+
+  .modal-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .install-steps {
+    grid-template-columns: 1fr;
+    /* Force single column stacking */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-card {
+    padding: 1.25rem 1rem;
+    text-align: left;
+  }
+
+  .step-num {
+    top: -5px;
+    left: -5px;
+  }
+
+  .modal-close {
+    top: 5px;
+    right: 15px;
+    font-size: 2rem;
+    color: #FFFFFF;
+    background: #000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
 }
