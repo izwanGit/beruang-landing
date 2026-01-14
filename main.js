@@ -25,9 +25,12 @@ document.querySelector('#app').innerHTML = `
             <span>Download for Android</span>
             <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           </a>
-          <a href="/downloads/beruang.ipa" class="btn btn-secondary" download>
-             <span>Download for iOS</span>
-          </a>
+          <div class="ios-btn-wrapper">
+            <a href="/downloads/beruang.ipa" class="btn btn-secondary" download>
+               <span>Download for iOS</span>
+            </a>
+            <a href="#" class="install-link" onclick="openInstallModal(event)">How to install?</a>
+          </div>
         </div>
       </div>
     </section>
@@ -124,27 +127,27 @@ document.querySelector('#app').innerHTML = `
 `;
 
 function generateCarouselItems() {
-    const items = [1, 2, 3, 4, 5, 6, 7];
-    // For infinite scroll, we clone items at both ends
-    // Buffer size should be at least visibleItems
-    const buffer = 3;
-    const pre = items.slice(-buffer);
-    const post = items.slice(0, buffer);
-    const combined = [...pre, ...items, ...post];
+  const items = [1, 2, 3, 4, 5, 6, 7];
+  // For infinite scroll, we clone items at both ends
+  // Buffer size should be at least visibleItems
+  const buffer = 3;
+  const pre = items.slice(-buffer);
+  const post = items.slice(0, buffer);
+  const combined = [...pre, ...items, ...post];
 
-    return combined.map((i, index) => {
-        // Map indices for lightbox back to original 0-6
-        let originalIdx;
-        if (index < buffer) originalIdx = items.length - buffer + index;
-        else if (index < buffer + items.length) originalIdx = index - buffer;
-        else originalIdx = index - (buffer + items.length);
+  return combined.map((i, index) => {
+    // Map indices for lightbox back to original 0-6
+    let originalIdx;
+    if (index < buffer) originalIdx = items.length - buffer + index;
+    else if (index < buffer + items.length) originalIdx = index - buffer;
+    else originalIdx = index - (buffer + items.length);
 
-        return `
+    return `
       <div class="gallery-item" onclick="openLightbox(${originalIdx})">
         <img src="/app_ui/ui_${i}.png" class="gallery-img" alt="Screen ${i}" />
       </div>
     `;
-    }).join('');
+  }).join('');
 }
 
 // --- Infinite Carousel Logic ---
@@ -155,59 +158,59 @@ let currentIndex = buffer; // Start at first original item
 let isTransitioning = false;
 
 function updateCarousel(instant = false) {
-    if (instant) track.style.transition = 'none';
-    else track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+  if (instant) track.style.transition = 'none';
+  else track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
 
-    const item = track.querySelector('.gallery-item');
-    if (!item) return;
-    const itemWidth = item.getBoundingClientRect().width;
-    const gap = 32; // Matches CSS exactly
-    const moveAmount = (itemWidth + gap) * currentIndex;
-    track.style.transform = `translateX(-${moveAmount}px)`;
+  const item = track.querySelector('.gallery-item');
+  if (!item) return;
+  const itemWidth = item.getBoundingClientRect().width;
+  const gap = 32; // Matches CSS exactly
+  const moveAmount = (itemWidth + gap) * currentIndex;
+  track.style.transform = `translateX(-${moveAmount}px)`;
 
-    if (instant) {
-        // Force reflow
-        track.offsetHeight;
-        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-    }
+  if (instant) {
+    // Force reflow
+    track.offsetHeight;
+    track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+  }
 }
 
 // Initial position
 updateCarousel(true);
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex++;
-    updateCarousel();
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentIndex++;
+  updateCarousel();
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-    if (isTransitioning) return;
-    isTransitioning = true;
-    currentIndex--;
-    updateCarousel();
+  if (isTransitioning) return;
+  isTransitioning = true;
+  currentIndex--;
+  updateCarousel();
 });
 
 track.addEventListener('transitionend', () => {
-    isTransitioning = false;
+  isTransitioning = false;
 
-    // Wrap around detection
-    // If we've reached the start clone (itemsCount + buffer), jump to the first original item
-    if (currentIndex >= itemsCount + buffer) {
-        currentIndex = buffer;
-        updateCarousel(true);
-    }
-    // If we've reached the end clone (buffer - 1), jump back to the last original item
-    else if (currentIndex < buffer) {
-        currentIndex = itemsCount + buffer - 1;
-        updateCarousel(true);
-    }
+  // Wrap around detection
+  // If we've reached the start clone (itemsCount + buffer), jump to the first original item
+  if (currentIndex >= itemsCount + buffer) {
+    currentIndex = buffer;
+    updateCarousel(true);
+  }
+  // If we've reached the end clone (buffer - 1), jump back to the last original item
+  else if (currentIndex < buffer) {
+    currentIndex = itemsCount + buffer - 1;
+    updateCarousel(true);
+  }
 });
 
 window.addEventListener('resize', () => {
-    currentIndex = buffer;
-    updateCarousel(true);
+  currentIndex = buffer;
+  updateCarousel(true);
 });
 
 
@@ -217,31 +220,49 @@ const lightboxImg = document.getElementById('lightboxImg');
 let currentLightboxIndex = 0;
 
 window.openLightbox = (index) => {
-    currentLightboxIndex = index;
-    updateLightboxImage();
-    lightbox.classList.add('active');
+  currentLightboxIndex = index;
+  updateLightboxImage();
+  lightbox.classList.add('active');
 };
 
 window.closeLightbox = () => {
-    lightbox.classList.remove('active');
+  lightbox.classList.remove('active');
 };
 
 function updateLightboxImage() {
-    lightboxImg.src = `/app_ui/ui_${currentLightboxIndex + 1}.png`;
+  lightboxImg.src = `/app_ui/ui_${currentLightboxIndex + 1}.png`;
 }
 
 document.getElementById('lbNext').addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex + 1) % itemsCount;
-    updateLightboxImage();
+  e.stopPropagation();
+  currentLightboxIndex = (currentLightboxIndex + 1) % itemsCount;
+  updateLightboxImage();
 });
 
 document.getElementById('lbPrev').addEventListener('click', (e) => {
-    e.stopPropagation();
-    currentLightboxIndex = (currentLightboxIndex - 1 + itemsCount) % itemsCount;
-    updateLightboxImage();
+  e.stopPropagation();
+  currentLightboxIndex = (currentLightboxIndex - 1 + itemsCount) % itemsCount;
+  updateLightboxImage();
 });
 
 lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+  if (e.target === lightbox) closeLightbox();
 });
+
+// --- Install Modal Logic ---
+const installModal = document.getElementById('installModal');
+
+window.openInstallModal = (e) => {
+  e.preventDefault();
+  installModal.classList.add('active');
+};
+
+window.closeInstallModal = () => {
+  installModal.classList.remove('active');
+};
+
+if (installModal) {
+  installModal.addEventListener('click', (e) => {
+    if (e.target === installModal) closeInstallModal();
+  });
+}

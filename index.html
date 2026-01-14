@@ -1,17 +1,59 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beruang - Download App</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beruang - Download App</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- Install Guide Modal -->
+  <div id="installModal" class="modal-overlay">
+    <div class="modal-content glass-card">
+      <button class="modal-close" onclick="closeInstallModal()">&times;</button>
+      <h2 class="section-title" style="margin-bottom: 1.5rem;">How to Install on iOS</h2>
+
+      <div class="modal-body">
+        <p class="section-desc" style="margin-bottom: 2rem;">
+          Since this app is not on the App Store yet, you need to "side-load" the <strong>.ipa</strong> file.
+        </p>
+
+        <div class="install-steps">
+          <div class="step-card">
+            <span class="step-num">1</span>
+            <h4>Download .IPA</h4>
+            <p>Download the <strong>beruang.ipa</strong> file to your computer.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">2</span>
+            <h4>Sidebar Tool</h4>
+            <p>Download <strong>AltStore</strong> or <strong>Sideloadly</strong> on your PC/Mac.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-num">3</span>
+            <h4>Install</h4>
+            <p>Connect your iPhone, open the tool, and drag the <strong>.ipa</strong> file into it to install.</p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <p><em>* You may need to "Trust" your own developer certificate in <strong>Settings > General > VPN & Device
+                Management</strong>.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
