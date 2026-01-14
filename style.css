@@ -473,56 +473,83 @@ body {
   color: var(--white);
 }
 
-.install-steps {
+.install-steps-simple {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
   text-align: left;
 }
 
-.step-card {
+.step-card-simple {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem 1rem;
+  padding: 1.25rem;
   border-radius: 16px;
-  position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.step-num {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 30px;
-  height: 30px;
-  background: var(--primary);
-  color: #1a1a1a;
-  border-radius: 50%;
+.step-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.9rem;
+  gap: 0.75rem;
 }
 
-.step-card h4 {
-  margin: 0.5rem 0;
+.step-num-pill {
+  background: var(--primary);
+  color: #1a1a1a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.step-card-simple h4 {
+  margin: 0;
   color: var(--primary);
   font-size: 1.1rem;
 }
 
-.step-card p {
+.step-card-simple p {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
   line-height: 1.4;
 }
 
-.modal-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+.troubleshooting-box {
+  background: rgba(200, 219, 190, 0.08);
+  border: 1px dashed var(--primary);
+  border-radius: 16px;
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.troubleshooting-box h5 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.troubleshooting-box ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+}
+
+.troubleshooting-box li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.troubleshooting-box li:last-child {
+  margin-bottom: 0;
 }
 
 
@@ -788,35 +815,19 @@ body {
     padding: 0 0.5rem;
   }
 
-  .install-steps {
+  .install-steps-simple {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
-    /* Tighter gap */
-    margin-bottom: 1rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .step-card {
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+  .step-card-simple {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.08);
   }
 
-  .step-card h4 {
-    font-size: 1rem;
-    margin: 0.25rem 0;
-  }
-
-  .step-card p {
-    font-size: 0.8rem;
-  }
-
-  .step-num {
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 24px;
-    height: 24px;
-    font-size: 0.75rem;
+  .troubleshooting-box {
+    padding: 1.25rem;
   }
 
   .modal-close {
