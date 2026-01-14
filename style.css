@@ -680,20 +680,16 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.btn-wrapper {
+.install-help-wrapper {
+  margin-top: 1.5rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.btn-subtext {
-  height: 20px;
-  pointer-events: none;
+  justify-content: center;
 }
 
 .install-link {
-  height: 20px;
+  height: auto;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -21,20 +21,17 @@ document.querySelector('#app').innerHTML = `
         </p>
         
         <div class="btn-group">
-          <div class="btn-wrapper">
-            <a href="/downloads/beruang.apk" class="btn btn-primary" download>
-              <span>Download for Android</span>
-              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-            </a>
-            <span class="btn-subtext">&nbsp;</span>
-          </div>
-          <div class="btn-wrapper">
-            <a href="/downloads/beruang.ipa" class="btn btn-secondary" download>
-               <span>Download for iOS</span>
-               <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-            </a>
-            <a href="#" class="install-link" onclick="openInstallModal(event)">How to install on iOS</a>
-          </div>
+          <a href="/downloads/beruang.apk" class="btn btn-primary" download>
+            <span>Download for Android</span>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          </a>
+          <a href="/downloads/beruang.ipa" class="btn btn-secondary" download>
+             <span>Download for iOS</span>
+             <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          </a>
+        </div>
+        <div class="install-help-wrapper">
+          <a href="#" class="install-link" onclick="openInstallModal(event)">How to install on iOS</a>
         </div>
       </div>
     </section>
