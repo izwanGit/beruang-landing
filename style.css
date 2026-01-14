@@ -559,19 +559,18 @@ body {
   }
 
   .hero {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    padding: 0 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     width: 100%;
   }
 
   .hero-visual {
-    max-width: 260px;
+    max-width: 240px;
     margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
@@ -587,12 +586,11 @@ body {
   }
 
   .hero-content h1 {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     line-height: 1.3;
     margin-bottom: 0.8rem;
     text-align: center;
     width: 100%;
-    display: block;
   }
 
   .hero-content .subtitle {
@@ -602,8 +600,6 @@ body {
     max-width: 100%;
     padding: 0 1.5rem;
     text-align: center;
-    display: block;
-    color: rgba(255, 255, 255, 0.95);
   }
 
   .btn-group {
@@ -612,19 +608,19 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     gap: 1.25rem;
-    /* Slightly more gap for easier tapping */
   }
 
   .btn {
-    width: 100% !important;
-    max-width: 280px;
-    height: 50px;
-    font-size: 0.95rem;
-    margin: 0 auto;
-    /* Force grouping in center */
+    width: 280px !important;
+    max-width: 90% !important;
+    height: 54px !important;
+    font-size: 1rem !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .install-help-wrapper {
@@ -637,24 +633,37 @@ body {
 
   .install-link {
     font-size: 0.85rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
     margin: 0 auto;
   }
 
-  /* Gallery Mobile Refinement */
+  /* Gallery / App Interface Fix */
   .gallery-section {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     padding: 0;
     width: 100%;
   }
 
   .gallery-carousel-wrapper {
-    padding: 0 2rem;
+    padding: 0 3.5rem;
+    /* Space for nav buttons */
     position: relative;
     width: 100%;
+  }
+
+  .gallery-track {
+    gap: 20px;
+    /* Tighter gap on mobile */
+  }
+
+  .gallery-item {
+    flex: 0 0 100% !important;
+    /* Force 1 item per view */
+    max-width: 300px;
+    height: auto;
+    border-width: 8px;
+    /* Thinner borders for mobile */
+    border-radius: 32px;
+    margin: 0 auto;
   }
 
   .nav-btn {
@@ -663,9 +672,8 @@ body {
     background: #FFFFFF !important;
     color: #000000 !important;
     opacity: 1 !important;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
-    z-index: 10000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
     display: flex !important;
   }
 
@@ -680,7 +688,7 @@ body {
   /* Feature Sections */
   .features-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .glass-card {
@@ -689,7 +697,7 @@ body {
   }
 
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     padding: 0 1rem;
   }
 
@@ -699,92 +707,115 @@ body {
     margin-bottom: 2rem;
   }
 
-  .card-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .card-text {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  /* Lightbox Navigation for Mobile */
+  /* Lightbox / Image Modal Navigation - SUPER HIGH CONTRAST */
   .lightbox-nav {
-    padding: 1rem;
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
+    position: fixed !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     background: #FFFFFF !important;
     color: #000000 !important;
     opacity: 1 !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    z-index: 1001;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 1) !important;
+    border-radius: 50% !important;
+    z-index: 1000001 !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 56px !important;
+    height: 56px !important;
+    border: 4px solid #000 !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+  }
+
+  .lb-prev {
+    left: 10px !important;
+  }
+
+  .lb-next {
+    right: 10px !important;
   }
 
   .lightbox-content-wrapper {
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 10px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000000;
   }
 
   .lightbox-img {
-    max-width: 80vw;
+    max-width: 85vw;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 12px;
   }
 
-  /* Modal (How to Install) Mobile */
+  /* Shrink "How to Install" Modal */
   .modal-content {
-    padding: 2.5rem 1.25rem;
+    padding: 1.5rem 1rem;
+    /* Much smaller padding */
     border-radius: 20px;
-    max-height: 90vh;
+    max-height: 85vh;
+    width: 90%;
     overflow-y: auto;
-    width: 95%;
   }
 
   .modal-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    /* Matches CSS now instead of inline */
   }
 
   .modal-body .section-desc {
-    margin-bottom: 1.5rem;
-    padding: 0 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding: 0 0.5rem;
   }
 
   .install-steps {
     grid-template-columns: 1fr;
-    /* Force single column stacking */
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 0.75rem;
+    /* Tighter gap */
+    margin-bottom: 1rem;
   }
 
   .step-card {
-    padding: 1.25rem 1rem;
-    text-align: left;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+  }
+
+  .step-card h4 {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+  }
+
+  .step-card p {
+    font-size: 0.8rem;
   }
 
   .step-num {
     top: -5px;
-    left: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
   }
 
   .modal-close {
     top: 5px;
-    right: 15px;
-    font-size: 2rem;
+    right: 10px;
+    font-size: 1.8rem;
     color: #FFFFFF;
     background: #000;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 100;
   }
 }
