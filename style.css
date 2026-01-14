@@ -419,8 +419,8 @@ body {
 
   .hero {
     margin-top: 1rem;
-    margin-bottom: 4rem;
-    padding: 0 1rem;
+    margin-bottom: 5rem;
+    padding: 0 1.5rem;
   }
 
   .hero-content h1 {
@@ -430,7 +430,8 @@ body {
 
   .hero-content .subtitle {
     font-size: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
   }
 
   .btn-group {
