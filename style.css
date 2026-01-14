@@ -683,6 +683,30 @@ body {
 }
 
 
+.install-help-wrapper {
+  margin-top: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.install-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.install-link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+}
 
 @media (max-width: 640px) {
   .install-steps {
