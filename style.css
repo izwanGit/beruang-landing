@@ -76,7 +76,7 @@ body {
 }
 
 .hero-content .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2.5rem;
   max-width: 650px;
@@ -413,7 +413,7 @@ body {
   }
 
   .hero-content .subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 2rem;
   }
 
