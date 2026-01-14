@@ -322,14 +322,26 @@ body {
 }
 
 .lightbox-nav {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: var(--white);
+  color: #333;
   border: none;
-  padding: 1.5rem;
-  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
   cursor: pointer;
   border-radius: 50%;
   margin: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+  z-index: 100;
+}
+
+.lightbox-nav:hover {
+  transform: scale(1.1);
+  background: var(--primary);
 }
 
 /* Features/AI Sections */
@@ -585,12 +597,13 @@ body {
 
   .hero-content .subtitle {
     font-size: 0.85rem;
-    margin-bottom: 1.8rem;
-    line-height: 1.5;
+    margin-bottom: 2rem;
+    line-height: 1.6;
     max-width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 1.5rem;
     text-align: center;
     display: block;
+    color: rgba(255, 255, 255, 0.95);
   }
 
   .btn-group {
@@ -599,7 +612,10 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.25rem;
+    /* Slightly more gap for easier tapping */
   }
 
   .btn {
@@ -731,6 +747,13 @@ body {
 
   .modal-content h2 {
     font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    /* Matches CSS now instead of inline */
+  }
+
+  .modal-body .section-desc {
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
   }
 
   .install-steps {
