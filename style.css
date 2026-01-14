@@ -76,12 +76,14 @@ body {
 }
 
 .hero-content .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2.5rem;
   max-width: 650px;
   line-height: 1.6;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Buttons */
@@ -413,7 +415,7 @@ body {
   }
 
   .hero-content .subtitle {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
   }
 
