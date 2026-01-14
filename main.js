@@ -168,7 +168,7 @@ function updateCarousel(instant = false) {
   const item = track.querySelector('.gallery-item');
   if (!item) return;
   const itemWidth = item.getBoundingClientRect().width;
-  const gap = 32; // Matches CSS exactly
+  const gap = window.innerWidth <= 768 ? 0 : 32;
   const moveAmount = (itemWidth + gap) * currentIndex;
   track.style.transform = `translateX(-${moveAmount}px)`;
 

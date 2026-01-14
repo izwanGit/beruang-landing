@@ -645,24 +645,39 @@ body {
 
   .gallery-carousel-wrapper {
     padding: 0 3.5rem;
-    /* Space for nav buttons */
     position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Hide any extra images */
+  }
+
+  .gallery-track-container {
+    overflow: hidden;
     width: 100%;
   }
 
   .gallery-track {
-    gap: 20px;
-    /* Tighter gap on mobile */
+    gap: 0;
+    /* No gap so images don't peek */
   }
 
   .gallery-item {
     flex: 0 0 100% !important;
-    /* Force 1 item per view */
-    max-width: 300px;
+    min-width: 100% !important;
+    /* Force full width */
+    max-width: 100% !important;
+    width: 100% !important;
     height: auto;
     border-width: 8px;
-    /* Thinner borders for mobile */
     border-radius: 32px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .gallery-item img {
+    max-width: 280px;
+    /* Control the actual image size */
     margin: 0 auto;
   }
 
