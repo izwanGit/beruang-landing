@@ -797,6 +797,56 @@ body {
     z-index: 1000000;
   }
 
+  /* AI Section Fix */
+  .ai-section.main-character {
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .ai-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .ai-text .section-title {
+    text-align: center !important;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .ai-text .card-text {
+    text-align: center;
+    font-size: 1rem !important;
+    padding: 0 0.5rem;
+  }
+
+  .ai-feature-card {
+    text-align: left;
+    /* Keep the card text internal alignment left if preferred, or center */
+    padding: 1.5rem;
+    background: rgba(200, 219, 190, 0.08);
+  }
+
+  .ai-visuals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .chart-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Reset the negative margin for the second card on mobile */
+  .chart-card[style*="margin-top: -1rem"] {
+    margin-top: 1rem !important;
+    margin-left: 0 !important;
+  }
+
   .lightbox-img {
     max-width: 85vw;
     max-height: 75vh;
