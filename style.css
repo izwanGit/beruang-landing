@@ -96,7 +96,7 @@ body {
 /* Buttons */
 .btn-group {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
@@ -683,7 +683,7 @@ body {
 }
 
 .install-help-wrapper {
-  margin-top: 2.5rem;
+  margin-top: 1.8rem;
   width: 100%;
   display: flex;
   justify-content: center;
