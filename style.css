@@ -54,7 +54,7 @@ body {
   width: 100%;
   max-width: 380px;
   height: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .app-screenshot-hero {
@@ -66,7 +66,7 @@ body {
 .hero-content h1 {
   font-size: 3.2rem;
   font-weight: 800;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   color: var(--white);
   letter-spacing: -0.02em;
   background: linear-gradient(to right, #fff, var(--primary));
@@ -88,7 +88,7 @@ body {
 .hero-content .subtitle {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 3rem auto;
   max-width: 650px;
   line-height: 1.7;
 }
@@ -682,29 +682,7 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.install-help-wrapper {
-  margin-top: 1.8rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-.install-link {
-  height: auto;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.85rem;
-  text-decoration: underline;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.install-link:hover {
-  color: var(--white);
-}
 
 @media (max-width: 640px) {
   .install-steps {
