@@ -36,6 +36,12 @@ document.querySelector('#app').innerHTML = `
             How to install on iOS
           </a>
         </div>
+        <div class="support-link-wrapper" style="margin-top: 1rem;">
+          <a href="#" class="support-link" onclick="openDonationModal(event)">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="margin-right: 6px; color: #FFD700;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            Support the Project (Donate)
+          </a>
+        </div>
       </div>
     </section>
 
@@ -125,7 +131,75 @@ document.querySelector('#app').innerHTML = `
 
     <footer class="footer">
       <p>&copy; ${new Date().getFullYear()} Beruang. Built for better financial futures.</p>
+      <div style="margin-top: 1rem;">
+         <a href="#" class="footer-link" onclick="openDonationModal(event)">Support the Developer</a>
+      </div>
     </footer>
+
+    <!-- Installation Modal -->
+    <div id="installModal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeInstallModal()">&times;</button>
+        <h2 class="section-title">Install Beruang on iOS</h2>
+        <p class="section-desc">Follow these simple steps to add Beruang to your iPhone home screen.</p>
+        
+        <div class="install-steps-simple">
+          <div class="step-card-simple">
+            <div class="step-header">
+              <span class="step-num-pill">Step 1</span>
+              <h4>Open in Safari</h4>
+            </div>
+            <p>Tap the <strong>Safari</strong> browser to open this page. Other browsers like Chrome won't work for installation.</p>
+          </div>
+          
+          <div class="step-card-simple">
+            <div class="step-header">
+              <span class="step-num-pill">Step 2</span>
+              <h4>Tap Share</h4>
+            </div>
+            <p>Tap the <strong>Share</strong> icon <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display:inline; vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6a3 3 0 100 2.684m0-2.684l6.632-3.316m0 0a3 3 0 100-2.684 3 3 0 000 2.684z"/></svg> at the bottom of the screen.</p>
+          </div>
+          
+          <div class="step-card-simple">
+            <div class="step-header">
+              <span class="step-num-pill">Step 3</span>
+              <h4>Add to Home</h4>
+            </div>
+            <p>Scroll down and tap <strong>'Add to Home Screen'</strong>. Look for the plus [+] icon.</p>
+          </div>
+        </div>
+
+        <div class="troubleshooting-box">
+          <h5>Still can't see 'Add to Home Screen'?</h5>
+          <ul>
+            <li>Make sure you scrolled down far enough in the Share menu.</li>
+            <li>Double-check if you are accidentally using a private/incognito tab.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal-overlay">
+      <div class="modal-content donation-modal-content">
+        <button class="modal-close" onclick="closeDonationModal()">&times;</button>
+        <h2 class="section-title">Support Beruang 🐻</h2>
+        <p class="section-desc">If this project has helped you manage your finances, consider buying the dev a coffee! Your support keeps the AI running.</p>
+        
+        <div class="donation-qr-container">
+          <img src="/donation.jpeg" class="qr-image" alt="DuitNow QR" />
+          <div class="qr-instruction">
+            <p><strong>Scan with any Malaysian Bank App</strong></p>
+            <p style="font-size: 0.85rem; opacity: 0.7;">(GXBank, ShopeePay, TNG, Maybank, etc.)</p>
+          </div>
+        </div>
+
+        <div class="bank-details-box">
+          <p>Recipient Name: <strong>Izwan</strong></p>
+          <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">Thank you for your generosity! every small contribution helps build better financial futures.</p>
+        </div>
+      </div>
+    </div>
 
   </div>
 `;
@@ -268,5 +342,23 @@ window.closeInstallModal = () => {
 if (installModal) {
   installModal.addEventListener('click', (e) => {
     if (e.target === installModal) closeInstallModal();
+  });
+}
+
+// --- Donation Modal Logic ---
+const donationModal = document.getElementById('donationModal');
+
+window.openDonationModal = (e) => {
+  e.preventDefault();
+  donationModal.classList.add('active');
+};
+
+window.closeDonationModal = () => {
+  donationModal.classList.remove('active');
+};
+
+if (donationModal) {
+  donationModal.addEventListener('click', (e) => {
+    if (e.target === donationModal) closeDonationModal();
   });
 }
