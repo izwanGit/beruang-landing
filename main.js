@@ -136,49 +136,6 @@ document.querySelector('#app').innerHTML = `
       </div>
     </footer>
 
-    <!-- Installation Modal -->
-    <div id="installModal" class="modal-overlay">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeInstallModal()">&times;</button>
-        <h2 class="section-title">Install Beruang on iOS</h2>
-        <p class="section-desc">Follow these simple steps to add Beruang to your iPhone home screen.</p>
-        
-        <div class="install-steps-simple">
-          <div class="step-card-simple">
-            <div class="step-header">
-              <span class="step-num-pill">Step 1</span>
-              <h4>Open in Safari</h4>
-            </div>
-            <p>Tap the <strong>Safari</strong> browser to open this page. Other browsers like Chrome won't work for installation.</p>
-          </div>
-          
-          <div class="step-card-simple">
-            <div class="step-header">
-              <span class="step-num-pill">Step 2</span>
-              <h4>Tap Share</h4>
-            </div>
-            <p>Tap the <strong>Share</strong> icon <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display:inline; vertical-align:middle;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6a3 3 0 100 2.684m0-2.684l6.632-3.316m0 0a3 3 0 100-2.684 3 3 0 000 2.684z"/></svg> at the bottom of the screen.</p>
-          </div>
-          
-          <div class="step-card-simple">
-            <div class="step-header">
-              <span class="step-num-pill">Step 3</span>
-              <h4>Add to Home</h4>
-            </div>
-            <p>Scroll down and tap <strong>'Add to Home Screen'</strong>. Look for the plus [+] icon.</p>
-          </div>
-        </div>
-
-        <div class="troubleshooting-box">
-          <h5>Still can't see 'Add to Home Screen'?</h5>
-          <ul>
-            <li>Make sure you scrolled down far enough in the Share menu.</li>
-            <li>Double-check if you are accidentally using a private/incognito tab.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <!-- Donation Modal -->
     <div id="donationModal" class="modal-overlay">
       <div class="modal-content donation-modal-content">
